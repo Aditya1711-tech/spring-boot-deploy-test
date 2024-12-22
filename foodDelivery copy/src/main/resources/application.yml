@@ -1,0 +1,30 @@
+server:
+  port: 8080
+  servlet:
+    session:
+      cookie:
+        http-only: true
+    context-path: /api/auth
+
+spring:
+  data:
+    mongodb:
+      uri: mongodb+srv://aditya:aditya@cluster0.jkxmft9.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+      database: testhere
+  main:
+    allow-circular-references: true
+
+  jackson:
+    serialization:
+      indent_output: true
+
+jwt:
+  secret: 5367566B59703373367639792F423F4528482B4D6251655468576D5A71347437
+  token-expiration-time:
+    user: 28800000      # 8 hours in milliseconds
+    admin: 14400000     # 4 hours in milliseconds
+  refresh-token-expiration-time:
+    user: 144000000     # 40 hours in milliseconds
+    admin: 72000000     # 20 hours in milliseconds
+
+colored-logs: true
